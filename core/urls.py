@@ -4,6 +4,7 @@ from django.urls import path
 
 from . import views
 from .forms import LoginForm
+from .views import index
 
 app_name = 'core'
 
