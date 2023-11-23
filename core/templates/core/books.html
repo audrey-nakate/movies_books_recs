@@ -1,0 +1,60 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+<style>
+    /* Custom styles for the h1 heading */
+    h1 {
+        font-size: 2em; /* Adjust the font size as needed */
+        font-weight: bold; /* Make it bold */
+        color: #05131b; /* Change the text color */
+        text-align: center; /* Center the text */
+        text-transform: uppercase; /* Convert text to uppercase */
+        margin-bottom: 20px; /* Add some spacing at the bottom */
+    }
+    h5 {
+        font-weight: bold; /* Make it bold */
+        color: #05131b; /* Change the text color */
+        text-transform: uppercase; /* Convert text to uppercase */
+        margin-bottom: 20px; /* Add some spacing at the bottom */
+    }
+    .card-container {
+      display: flex;
+      flex-wrap: wrap; /* Allow wrapping to the next line if needed */
+      justify-content: space-around; /* Horizontally space items */
+    }
+</style>
+
+<h1> Books </h1>
+<div class="card-container">
+{% for book in books_list %}
+<div class="card" style="width: 15rem; height: 25rem; border: 2px solid #3498db; margin-bottom: 20px;" >
+    <img src="{% static 'core/book.jpg' %}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{ book }}</h5>
+      <p class="card-text">{{ book.description }}</p>
+      <a href="{% url 'core:book' book.id %}" class="btn btn-primary">Learn more</a>
+    </div>
+  </div>
+<!-- <strong></strong> -->
+<!-- <ul> -->
+<!-- <li> Author :{{ book.author }}</li>
+<li>Publisher :{{ book.publisher }}</li> -->
+<!-- <li>Description :</li> -->
+<!-- <li>ISBN :{{ book.ISBN }}</li>
+<li>------------------------</li> -->
+<!-- </ul> -->
+{% endfor %}
+</div>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- Your other content goes here -->
+
+  <!-- Include Bootstrap JS from a CDN or your local file -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+{% endblock %}
