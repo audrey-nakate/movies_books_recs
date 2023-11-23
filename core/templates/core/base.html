@@ -17,7 +17,7 @@
             <div class="space-x-6">
                 {% if request.user.is_authenticated %}
                 <a href="{% url 'core:logout' %}" class="px-6 py-3 text-lg font-semibold bg-yellow-500 text-white rounded-xl hover:bg-yellow-700">Log Out</a>
-
+                <a href="{% url 'core:addbook' %}" class="px-6 py-3 text-lg font-semibold bg-yellow-500 text-white rounded-xl hover:bg-yellow-700">Add Book</a>
                 {% else %}
                 <a href="{% url 'core:signup' %}" class="px-6 py-3 text-lg font-semibold bg-teal-500 text-white rounded-xl hover:bg-teal-700">Sign Up</a>
                 <a href="{% url 'core:login' %}" class="px-6 py-3 text-lg font-semibold bg-gray-500 text-white rounded-xl hover:bg-gray-700">Login</a>
@@ -27,6 +27,7 @@
 
 
         <div class="px-6 py-6">
+        <!-- <div class = "container"></div>     -->
             {% block content %}
             {% endblock %}
         </div>

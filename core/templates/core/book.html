@@ -1,0 +1,30 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Book{% endblock %}
+
+{% block content %}
+<style>
+    /* Custom styles for the h1 heading */
+    h1 {
+        font-size: 2em; /* Adjust the font size as needed */
+        font-weight: bold; /* Make it bold */
+        color: #05131b; /* Change the text color */
+        text-align: center; /* Center the text */
+        text-transform: uppercase; /* Convert text to uppercase */
+        margin-bottom: 20px; /* Add some spacing at the bottom */
+    }
+</style>
+<center>
+<h1>{{ individualbook }}</h1>
+<br/>
+{{ individualbook.author }}<br/>
+{{ individualbook.publisher }}<br/>
+{{ individualbook.description }}<br/>
+{{ individualbook.ISBN }}<br/>
+
+
+
+
+
+</center>
+{% endblock %}

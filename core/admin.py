@@ -1,3 +1,10 @@
 from django.contrib import admin
+from .models import Directors
+from .models import Authors
+from .models import Books
+from .models import Movies
 
-# Register your models here.
+admin.site.register(Directors)
+admin.site.register(Authors)
+admin.site.register(Books)
+admin.site.register(Movies)
