@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.contrib.auth import views as auth_views
 from django.urls import path
-
+from django.conf.urls.static import static
 from . import views
 from .forms import LoginForm
 from .views import index
@@ -18,3 +18,4 @@ urlpatterns = [
     path('book/<book_id>',views.book,name ='book')
     ]
 
+urlpatterns += static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
